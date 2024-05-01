@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    
+    <record id="estate_property_view_tree" model="ir.ui.view">
+        <field name="name">estate.property.view</field>
+        <field name="inherit_id" ref="estate.estate_property_form_tree"/>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    
+
+</odoo>

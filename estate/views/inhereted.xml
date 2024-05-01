@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<record id="view_users_form" model="ir.ui.view">
+    <field name="name">user.form</field>
+    <field name="model">user</field>
+    <field name="RandomID" ref="base.view_users_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//sheet" position="inside">
+          <page string="Offer list" name="offer_list">
+            <field name="property_ids" widget="mrp_production_components_x2many">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </page>
+        </xpath>
+    </field>
+</record>
+</data>
+</odoo>

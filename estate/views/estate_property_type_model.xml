@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="action_property_type_model" model="ir.actions.act_window">
+            <field name="name">property types</field>
+            <field name="res_model">estate.property.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="estate_property_type_view_tree" model="ir.ui.view">
+            <field name="name">estate.property.type.view</field>
+            <field name="model">estate.property.type</field>
+            <field name="arch" type="xml">
+                <tree string="Channel" >
+                    <field name="name"/>                
+                </tree>
+            </field>
+        </record>
+        <record id="estate_property_type_form_tree" model="ir.ui.view">
+            <field name="name">estate.property.tree</field>
+            <field name="model">estate.property.type</field>
+            <field name="arch" type="xml">
+                
+                <form string="Registration">
+                    <header>
+                        <button name="action_view_offers" type="object" class="oe_stat_button" icon="fa-calendar-check-o">
+                            <field string="Offers" name="offer_count" widget="statinfo"/>
+                        </button>                    
+                    </header>
+                    <sheet>
+                        <group>
+                            <group string="items">
+                                <field name="name"/>                
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Related properties" name="related_properties">
+                                <field name="property_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="postcode"/>
+                                        <field name="total_area"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>                            
+                </form>
+            </field>
+        </record>
+        <record id="estate_property_type_search" model="ir.ui.view">
+            <field name="name">estate.property.type.search</field>
+            <field name="model">estate.property.type</field>
+            <field name="arch" type="xml">
+                <search string="property search">
+                    <field name="name"/>                
+                </search>
+            </field>
+        </record> 
+</odoo>
